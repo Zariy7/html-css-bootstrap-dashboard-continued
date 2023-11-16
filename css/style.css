@@ -1,0 +1,72 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* UTILITY CLASSES */
+
+/* HEADER CLASSES */
+
+header {
+    height: 5rem;
+    width: 100%;
+    position: fixed;
+    background-color: white;
+    z-index: 1;
+}
+
+#logo-mobile{
+    width: 3rem;
+}
+
+#logo {
+    width: 10rem;
+}
+
+/* MAIN CLASSES */
+
+main {
+    padding-top: 5rem;
+}
+
+/* SIDEBAR CLASSES */
+
+#sidebar {
+    width: 5rem;
+    height: calc(100vh - 5rem);
+    background-color: rgb(35, 35, 77);
+    background-image: url("../img/sidebar-bg.png");
+}
+
+@media screen and (min-width: 992px) {
+    #sidebar {
+        width: 10rem;
+    }
+}
+
+/* DASHBOARD CLASSES */
+
+#dashboard-header {
+    width: 100%;
+    background-color: cadetblue;
+}
+
+.dashboard-button {
+    border-radius: 15px;
+    background: rgb(32, 32, 235);
+    padding: 3px;
+    font-size: 15px;
+}
+
+#dashboard{
+    overflow-y: auto;
+}
+
+@media screen and (min-width: 992px) {
+    #dashboard-container {
+        height: calc(100vh - 10rem);
+    }
+}
