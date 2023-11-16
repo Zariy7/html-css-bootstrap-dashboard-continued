@@ -25,7 +25,7 @@
 
                     
                     <div class="col">
-                        <div class="d-flex justify-content-center">
+                        <div class="d-flex justify-content-center align-items-center">
                             <div>
                                 <div class="d-none d-lg-block">
                                     <i class="fa-solid fa-ellipsis-vertical fa-2x"></i>
@@ -36,7 +36,16 @@
                             </div>
                             <div>
                                 <div>
-                                    <i class="fa-solid fa-bell fa-2x text-warning px-2"></i>
+                                    <div class="dropdown">
+                                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="fa-solid fa-bell fa-2x text-warning px-2"></i>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                          <li><a class="dropdown-item" href="#">Profilo</a></li>
+                                          <li><a class="dropdown-item" href="#">Fatturazione</a></li>
+                                          <li><a class="dropdown-item" href="#">Logout</a></li>
+                                        </ul>
+                                      </div>
                                 </div>
                             </div>
                         </div>
@@ -51,19 +60,19 @@
                 <div>
                     <div id="sidebar" class="p-4 d-flex flex-column justify-content-between text-white">
                         <div>
-                            <div class="d-flex justify-content-around">
+                            <div class="d-flex justify-content-around sidebar-button p-1">
                                 <div>
                                     <i class="fa-solid fa-house"></i>
                                 </div>
                                 <div class="d-none d-lg-inline">Home</div>
                             </div>
-                            <div class="d-flex justify-content-around">
+                            <div class="d-flex justify-content-around sidebar-button p-1">
                                 <div>
                                     <i class="fa-solid fa-chart-simple"></i>
                                 </div>
                                 <div class="d-none d-lg-inline">Stats</div>
                             </div>
-                            <div class="d-flex justify-content-around">
+                            <div class="d-flex justify-content-around sidebar-button p-1">
                                 <div>
                                     <i class="fa-solid fa-signal"></i>
                                 </div>
@@ -71,7 +80,7 @@
                             </div>
                         </div>
     
-                        <div class="d-flex justify-content-around">
+                        <div class="d-flex justify-content-around sidebar-button p-1">
                             <div>
                                 <i class="fa-solid fa-gear"></i>
                             </div>
@@ -87,7 +96,9 @@
                                     <div class="d-flex">
                                         <div class="m-2">Nuovo Studente</div>
                                         <div class="border rounded m-2">
-                                            <i class="fa-solid fa-plus m-2"></i>
+                                            <button class="btn text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+                                                <i class="fa-solid fa-plus m-2"></i>
+                                            </button>                                                                                                                                 
                                         </div>
                                     </div>
                                 </div>
@@ -140,7 +151,7 @@
 
                                     <div class="border border-bottom-0">
                                         <h1 class="border-bottom p-2">Prossime Classi</h1>
-                                            <table class="table mb-0">
+                                            <table class="table mb-0 table-hover">
                                                 <thead>
                                                   <tr>
                                                     <th scope="col">Nome</th>
@@ -290,7 +301,7 @@
                                                     </button>
                                                   </h2>
                                                   <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                                                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                                                    <div class="accordion-body">Clicca sul "+" in alto nella sezione blu.</div>
                                                   </div>
                                                 </div>
                                                 <div class="accordion-item">
@@ -300,7 +311,7 @@
                                                     </button>
                                                   </h2>
                                                   <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                                                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+                                                    <div class="accordion-body">Clicca sull'icona della campanella.</div>
                                                   </div>
                                                 </div>
                                                 <div class="accordion-item">
@@ -310,7 +321,7 @@
                                                     </button>
                                                   </h2>
                                                   <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                                                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                                                    <div class="accordion-body">Teoricamente? Si, purtroppo sono troppo stupido per renderlo funzionante.</div>
                                                   </div>
                                                 </div>
                                             </div>
@@ -399,10 +410,74 @@
                     </div>
                 </div>
             </div>
-
         </main>
-
-
+        
+        <div class="offcanvas offcanvas-end offcanvas-form-details" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Inserisci un nuovo studente</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="container">
+                    <div class="row flex-wrap">
+                        <div class="col-12 col-lg-6">
+                            <label for="name" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="name">
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <label for="surname" class="form-label">Cognome</label>
+                            <input type="text" class="form-control" id="surname">
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <label for="email" class="form-label">Email</label>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">@</span>
+                                <input type="text" class="form-control" id="email" aria-label="email" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="text" class="form-control" id="password">
+                        </div>
+                        <div class="col-12">
+                            <label for="adress" class="form-label">Indirizzo</label>
+                            <input type="text" class="form-control" id="adress">
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <label for="city" class="form-label">Citt&agrave;</label>
+                            <input type="text" class="form-control" id="city">
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <label for="state" class="form-label">Stato</label>
+                            <select class="form-select" aria-label="state" id="state">
+                                <option selected>Scegli...</option>
+                                <option value="1">Depressione</option>
+                                <option value="2">Tristezza</option>
+                                <option value="3">Amarezza</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-lg-2">
+                            <label for="cap" class="form-label">Cap</label>
+                            <input type="text" class="form-control" id="cap" maxlength="5">
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label" for="customFile">Foto</label>
+                            <input type="file" class="form-control" id="customFile" />
+                        </div>
+                        <div class="my-4">
+                            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                  Seleziona per proseguire
+                            </label>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-primary">Salva</button>
+                            <button type="button" class="btn btn-warning">Svuota</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     </body>
 </html>

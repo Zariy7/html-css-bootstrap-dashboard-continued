@@ -41,6 +41,10 @@ main {
     background-image: url("../img/sidebar-bg.png");
 }
 
+.sidebar-button:hover{
+    background-color: rgb(124, 124, 124);
+}
+
 @media screen and (min-width: 992px) {
     #sidebar {
         width: 10rem;
@@ -68,5 +72,15 @@ main {
 @media screen and (min-width: 992px) {
     #dashboard-container {
         height: calc(100vh - 10rem);
+    }
+}
+
+.offcanvas-form-details{
+    width: 100vw !important;
+}
+
+@media screen and (min-width: 992px){
+    .offcanvas-form-details{
+        width: 50% !important;
     }
 }
